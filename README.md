@@ -11,6 +11,9 @@
 - 구현의 편의를 위해 사용자 생성 등의 관리는 API로 제공하지 않고 프로젝트 시작 시 자동으로 데이터가 입력되도록 하며, 계좌 추가/해지/확인, 거래 생성/거래 취소/거래 확인의 6가지 API를 제공  
 * 거래금액을 늘리거나 줄이는 과정에서 여러 쓰레드 혹은 인스턴스에서 같은 계좌에 접근할 경우 동시성 이슈로 인한 lost update가 발생할 수 있음 -> AOP - Lock 이용
 
+## Erd
+![erd.png](./erd.png)
+
 ## API
 1) 계좌 생성  
 a. 파라미터 : 사용자 아이디, 초기 잔액  
@@ -43,7 +46,7 @@ b. 결과
 i. 실패 : 원거래 금액과 취소 금액이 다른 경우(CANCEL_MUST_FULLY), 트랜잭션이 해당 계좌의 거래가 아닌경우(TRANSACTION_ACCOUNT_UN_MATCH), 계좌가 사용중인경우(ACCOUNT_TRANSACTION_LOCK), 트랜잭셔이 없는경우(트랜잭션이 없는 경우)  
 ii. 성공  
 - 응답 : 계좌번호, transaction_result, transaction_id, 취소 거래금액, 거래일시  
-6) 거래 확인
+6) 거래 확인  
 a. 파라미터 : transaction_id  
 b. 결과  
 i. 실패 : 해당 transaction_id 없는 경우 실패 응답(TRANSACTION_NOT_FOUND)  
