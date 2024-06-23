@@ -34,7 +34,7 @@ ii. 성공  - 응답 : (계좌번호, 잔액) 정보를 Json list 형식으로 �
 4) 잔액 사용  
 a. 파라미터 : 사용자 아이디, 계좌 번호, 거래 금액  
 b. 결과  
-i. 실패 : 사용자 없는 경우(USER_NOT_FOUND), 사용자 아이디와 계좌 소유주가 다른 경우(USER_ACCOUNT_UN_MATCH), 계좌가 이미 해지 상태인 경우(ACCOUNT_ALREADY_UNREGISTERED), 거래금액이 잔액보다 큰 경우(AMOUNT_EXCEED_BALANCE), 거래금액이 너무 작거나 큰 경우 (INVALID_AMOUNT), 계좌가 사용중인경우(ACCOUNT_TRANSACTION_LOCK)
+i. 실패 : 사용자 없는 경우(USER_NOT_FOUND), 사용자 아이디와 계좌 소유주가 다른 경우(USER_ACCOUNT_UN_MATCH), 계좌가 이미 해지 상태인 경우(ACCOUNT_ALREADY_UNREGISTERED), 거래금액이 잔액보다 큰 경우(AMOUNT_EXCEED_BALANCE), 거래금액이 너무 작거나 큰 경우 (INVALID_AMOUNT), 계좌가 사용중인경우(ACCOUNT_TRANSACTION_LOCK)  
 ii. 성공  - 응답 : 계좌번호, transaction_result, transaction_id, 거래금액, 거래일시  
 5) 잔액 사용 취소  
 a. 파라미터 : transaction_id, 계좌번호, 거래금액  
